@@ -1,0 +1,90 @@
+1. temperatures.py
+MENU = """C - Convert Celsius to Fahrenheit
+F - Convert Fahrenheit to Celsius
+Q - Quit"""
+print(MENU)
+choice = input(">>> ").upper()
+while choice != "Q":
+    if choice == "C":
+        celsius = float(input("Celsius: "))
+        fahrenheit = celsius * 9.0 / 5 + 32
+        print("Result: {:.2f} F".format(fahrenheit))
+    elif choice == "F":
+        fahrenheit = float(input("Enter Fahrenheit: "))
+        celsius = 5 / 9 * (fahrenheit - 32)
+        print("Result: {:.2f} C".format(celsius))
+    else:
+        print("Invalid option")
+    print(MENU)
+    choice = input(">>> ").upper()
+print("Thank you.")
+
+2.sales_bonus.py
+sales = 0
+while sales >= 0:
+    sales = float(input("Enter sales: $"))
+    if sales >= 1000:
+        print("your bonus is: ", sales * 0.15)
+    elif sales >= 0:
+        print("your bonus is: ", sales * 0.10)
+    else:
+        print("Negative sales")
+
+3.broken_score.py
+score = float(input("Enter score: "))
+
+if score > 100 or score < 0:
+    print("Invalid score")
+elif score >= 90:
+    print("Excellent")
+elif score >= 50:
+    print("Passable")
+else:
+    print("Bad")
+
+4.loops.py
+#
+for i in range(1, 21, 2):
+    print(i, end=' ')
+print()
+
+a.
+for i in range(0, 101, 10):
+    print(i, end=' ')
+print()
+
+b.
+for i in range(20, 0, -1):
+    print(i, end=' ')
+print()
+
+c.
+for i in range(0, number_of_stars):
+    print("* ", end="")
+    print()
+
+d.
+number_of_increasing_stars = int(input("Enter the number of increasing stars: "))
+k = 1
+for i in range(0, number_of_increasing_stars):
+    for j in range(0, k):
+        print("* ", end="")
+    k = k + 1
+    print()
+
+5.shop_calculator.py
+items = int(input("Number of items? "))
+while items <= 0:
+    print("1 or more item is required.")
+    items = int(input("Number of items? "))
+item = 1
+total = 0
+while item <= items:
+    price = float(input("Price of item: "))
+    item = item + 1
+    total = price + total
+if total > 100:
+    total = total - (total * 0.1)
+    print(f"For {items} items the total price is ${total:.2f}")
+else:
+    print(f"For {items} items the total price is ${total:.2f}")
