@@ -1,7 +1,21 @@
-password = input("password? ")
+MIN_LENGTH = 6
+MAX_LENGTH = 20
 
-if len(password) < 4 or len(password) > 20:
-    print("A password must have 8 to 20 characters only")
-else:
-    print("Good to go")
+
+def main():
+    password = get_password()
+    while len(password) < MIN_LENGTH and MAX_LENGTH > len(password):
+        print("A password must have 6 to 20 characters only")
+        password = get_password()
+    get_asterisks(password)
+
+
+def get_password():
+    return input("password: ")
+
+
+def get_asterisks(password):
     print("*" * len(password))
+
+
+main()
